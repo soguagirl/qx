@@ -121,8 +121,7 @@ module.exports = function(grunt) {
           files: ['app/*.html']
         },
         js: {
-          files: ['app/js/*.js'],
-          tasks: ['copy:js']
+          files: ['app/js/*.js']
         },
         less: {
           files: ['app/less/*.less'],
