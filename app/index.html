@@ -5,9 +5,9 @@
 	<meta name="description" content="前线官网" />
 	<meta name="keywords"  content="前线" />
 	<title>前线</title>
-  <link rel="stylesheet" type="text/css" href="public/lib/fullpage/fullpage.css" />
-  <link rel="stylesheet" href="public/css/common.css"/>
-  <link rel="stylesheet" href="public/css/index.css"/>
+  <link rel="stylesheet" type="text/css" href="lib/fullpage/fullpage.css" />
+  <link rel="stylesheet" href="css/common.css"/>
+  <link rel="stylesheet" href="css/index.css"/>
 	<!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
@@ -15,32 +15,74 @@
 	<![endif]-->
 </head>
 <body>
-<ul id="menu">
-	<li data-menuanchor="firstPage" class="active" id="section0"><a href="#firstPage">First slide</a></li>
-	<li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
-	<li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
-</ul>
+  <a id="logo" href="https://alvarotrigo.com/fullPage/" alt="前线 homepage">
+    <img src="./assets/images/logo1.png" alt="">
+  </a>
+  <ul id="menu">
+    <li data-menuanchor="page1" class="active">
+      <a href="#page1">首页</a>
+    </li>
+    <li data-menuanchor="page2">
+      <a href="#page2">解决方案</a>
+    </li>
+    <li data-menuanchor="page3">
+      <a href="#page3">战略合作</a>
+    </li>
+    <li data-menuanchor="page4">
+      <a href="#page4">关于我们</a>
+    </li>
+  </ul>
 
-<div id="fullpage">
-	<div class="section " id="section0">
-		<h1>fullPage.js</h1>
-		<p>Continuous Scrolling Enabled</p>
-		<img src="imgs/fullPage.png" alt="fullPage" />
-	</div>
-	<div class="section" id="section1">
-		<div class="intro">
-			<h1>Around the world scrolling</h1>
-			<p>Go to the first section and scroll up or to the last one and scroll down to see how it works.</p>
-		</div>
-	</div>
-	<div class="section" id="section2">
-		<div class="intro">
-			<h1>Scroll Down</h1>
-			<p>And it will animate down to the first section</p>
-		</div>
-	</div>
-</div>
-<script src="public/lib/fullpage/fullpage.js"></script>
-<script src="public/js/index.js"></script>
+  <div id="fullpage">
+    <div class="section" id="home">
+      <div class="title"><img src="assets/images/section1/title.png" alt=""></div>
+      <div class="sub-title"><img src="assets/images/section1/subtitle.png" alt=""></div>
+    </div>
+    <div class="section" id="solution">
+      <div class="solution-item solution1">
+        <div class="mask"></div>
+        <div class="solution-content">
+          <p class="order">01</p>
+          <p class="name">个人信贷产品方案</p>
+          <p class="desc"></p>
+        </div>
+      </div><div class="solution-item solution2">
+        <div class="mask"></div>
+        <div class="solution-content">
+          <p class="order">02</p>
+          <p class="name">小微企业贷产品方案</p>
+          <p class="desc"></p>
+        </div>
+      </div><div class="solution-item solution3">
+        <div class="mask"></div>
+        <div class="solution-content">
+          <p class="order">03</p>
+          <p class="name">场景及消费金融方案</p>
+          <p class="desc"></p>
+        </div>
+      </div><div class="solution-item solution4">
+        <div class="mask"></div>
+        <div class="solution-content">
+          <p class="order">04</p>
+          <p class="name">精准营销运营方案</p>
+          <p class="desc"></p>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="cooperation">
+      <div class="intro">
+        <h1>Scroll Down</h1>
+        <p>And it will animate down to the first section</p>
+      </div>
+    </div>
+    <div class="section" id="about">
+        <div class="intro">
+          <h1>Scroll Down</h1>
+          <p>And it will animate down to the first section</p>
+        </div>
+    </div>
+  </div>
+  <script src="lib/fullpage/fullpage.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>

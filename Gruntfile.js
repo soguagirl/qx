@@ -13,17 +13,9 @@ module.exports = function(grunt) {
         assets: {
           files: [{
             expand: true,
-            cwd: 'app/public/assets',
+            cwd: 'app/assets',
             src: ['**'],
-            dest: 'build/public/assets'
-          }]
-        },
-        js: {
-          files: [{
-            expand: true,
-            cwd: 'app/js',
-            src: ['*.js'],
-            dest: 'app/public/js'
+            dest: 'build/assets'
           }]
         }
       },
@@ -31,9 +23,9 @@ module.exports = function(grunt) {
         build: {
           files: [{
             expand: true,     // Enable dynamic expansion.
-            cwd: 'app/css',      // Src matches are relative to this path.
+            cwd: 'app/less',      // Src matches are relative to this path.
             src: ['*.less'], // Actual pattern(s) to match.
-            dest: 'app/public/css',   // Destination path prefix.
+            dest: 'app/css',   // Destination path prefix.
             ext: '.css',   // Dest filepaths will have this extension.
             extDot: 'first'   // Extensions in filenames begin after the first dot
           }]
@@ -44,9 +36,9 @@ module.exports = function(grunt) {
         build: {
           files: [{
             expand: true,     // Enable dynamic expansion.
-            cwd: 'app/public/css',      // Src matches are relative to this path.
+            cwd: 'app/css',      // Src matches are relative to this path.
             src: ['*.css'], // Actual pattern(s) to match.
-            dest: 'app/public/css',   // Destination path prefix.
+            dest: 'app/css',   // Destination path prefix.
             ext: '.css',   // Dest filepaths will have this extension.
             extDot: 'first'   // Extensions in filenames begin after the first dot
           }]
@@ -66,9 +58,9 @@ module.exports = function(grunt) {
         build: {
           files: [{
             expand: true,     // Enable dynamic expansion.
-            cwd: 'app/public/css',      // Src matches are relative to this path.
+            cwd: 'app/css',      // Src matches are relative to this path.
             src: ['*.css'], // Actual pattern(s) to match.
-            dest: 'build/public/css',   // Destination path prefix.
+            dest: 'build/css',   // Destination path prefix.
             ext: '.css',   // Dest filepaths will have this extension.
             extDot: 'first'   // Extensions in filenames begin after the first dot
           }]
@@ -86,7 +78,7 @@ module.exports = function(grunt) {
             expand: true,     // Enable dynamic expansion.
             cwd: 'app/js',      // Src matches are relative to this path.
             src: ['*.js'], // Actual pattern(s) to match.
-            dest: 'build/public/js',   // Destination path prefix.
+            dest: 'build/js',   // Destination path prefix.
             ext: '.js',   // Dest filepaths will have this extension.
             extDot: 'first'   // Extensions in filenames begin after the first dot
           }]
@@ -133,7 +125,7 @@ module.exports = function(grunt) {
           tasks: ['copy:js']
         },
         less: {
-          files: ['app/css/*.less'],
+          files: ['app/less/*.less'],
           tasks: ['less', 'autoprefixer']
         }
       },
@@ -169,7 +161,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
 
     // 开发
-    grunt.registerTask('default',['copy:js', 'less', 'autoprefixer', 'connect', 'watch']);
+    grunt.registerTask('default',['less', 'autoprefixer', 'connect', 'watch']);
     // 构建
     grunt.registerTask('build',['clean', 'copy:assets', 'htmlmin', 'less', 'autoprefixer', 'cssmin', 'jshint', 'uglify']);
 };

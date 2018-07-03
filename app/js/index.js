@@ -1,8 +1,10 @@
 var myFullpage = new fullpage('#fullpage', {
-  sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-  anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+  // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+  anchors: ['page1', 'page2', 'page3', 'page4'],
   menu: '#menu',
-  continuousVertical: true,
+  continuousVertical: false,
+  navigation: true,
+  navigationPosition: 'right',
   afterLoad: function(anchorLink, index){
         console.log("AFTER LOAD - anchorLink:" +anchorLink + " index:" +index );
     },
