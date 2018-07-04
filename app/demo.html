@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#root.dark {
+  #content { color: blue; }
+}
+#root.light {
+#content { color: red; }
+}
+</style>
+<script>
+
+var toggle = true;
+function click() {
+console.log('click')
+var root = document.getElementById("root");
+ root.className = toggle ? "dark" : "light";
+
+ toggle = !toggle;
+}
+</script>
+</head>
+<body>
+<div id="root" class="">
+  <div id="content">content</div>
+</div>
+<button onclick="click()">click</button>
+
+</body>
+</html>

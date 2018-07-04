@@ -1,6 +1,21 @@
 #app {
   min-width: 1280px;
 }
+#app.light #menu a {
+  color: #000;
+}
+#app.light #menu li.active a {
+  color: #2789f5;
+}
+#app.light #menu li.active a:after {
+  background: #2789f5;
+}
+#app.dark #menu a {
+  color: #fff;
+}
+#app.dark #menu li.active a:after {
+  background: #fff;
+}
 @-webkit-keyframes translateYAnim {
   to {
     -webkit-transform: translateY(0px);
@@ -12,6 +27,16 @@
   to {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  to {
     opacity: 1;
   }
 }
@@ -50,7 +75,7 @@
   height: 100%;
 }
 #solution .solution-item:hover .mask {
-  background-color: blue;
+  background-color: #2789f5;
 }
 #solution .solution-item:hover .solution-content {
   -webkit-transform: translateY(-250px);
@@ -75,8 +100,9 @@
   transition: backgroud-color 1s;
 }
 #solution .solution-item .solution-content {
+  margin: 0 20px;
   position: absolute;
-  left: 32px;
+  left: 0px;
   top: 40%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -103,6 +129,18 @@
   transition-duration: 400ms;
   transition-delay: 0s;
 }
+#solution .solution-item .solution-content .desc .option {
+  text-align: right;
+}
+#solution .solution-item .solution-content .desc .option .btn-detail {
+  margin-top: 60px;
+  padding: 7px 24px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+  border: solid 1px #fff;
+}
 #solution .solution-item.solution1 {
   background: url('../assets/images/section2/1.jpg') 25% 0% no-repeat;
   background-size: cover;
@@ -118,4 +156,141 @@
 #solution .solution-item.solution4 {
   background: url('../assets/images/section2/4.jpg') 25% 0% no-repeat;
   background-size: cover;
+}
+#cooperation {
+  text-align: center;
+}
+#cooperation .title,
+#cooperation .sub-title {
+  font-size: 40px;
+  letter-spacing: 14px;
+}
+#cooperation .title {
+  -webkit-transform: translateY(150px);
+          transform: translateY(150px);
+  opacity: 0.3;
+  -webkit-animation: translateYAnim 1s;
+          animation: translateYAnim 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+#cooperation .sub-title {
+  margin-top: 50px;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  opacity: 0.3;
+  -webkit-animation: translateYAnim 1s;
+          animation: translateYAnim 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+#cooperation .partners {
+  padding: 0px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 158px;
+  opacity: 0;
+  -webkit-animation: fadeIn 1.5s;
+          animation: fadeIn 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+#cooperation .btn-more {
+  display: inline-block;
+  margin-top: 100px;
+  width: 300px;
+  height: 80px;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 80px;
+  letter-spacing: 5px;
+  background-color: white;
+  color: #2789f5;
+  border: solid 1px #2789f5;
+}
+#cooperation .btn-more:hover {
+  background-color: #2789f5;
+  color: white;
+  border: solid 1px #2789f5;
+}
+#about {
+  position: relative;
+  text-align: center;
+}
+#about .company {
+  padding: 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 125px;
+}
+#about .company .company-item {
+  position: relative;
+  overflow: hidden;
+}
+#about .company .company-item:hover img {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+}
+#about .company .company-item:hover .image-title {
+  color: #fff;
+  background-color: rgba(39, 137, 245, 0.6);
+}
+#about .company .company-item img {
+  display: block;
+  width: 480px;
+  height: 280px;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+}
+#about .company .company-item .image-title {
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 60px;
+  font-size: 28px;
+  line-height: 60px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: color 1s, background-color 1s;
+}
+#about .contact-us {
+  position: absolute;
+  left: 60px;
+  bottom: 30px;
+}
+#footer .footer-body {
+  padding: 20px 205px;
+  height: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 18px;
+  line-height: 36px;
+  color: #fff;
+  background-color: #2789f5;
+}
+#footer .footer-body .left {
+  padding-top: 15px;
+}
+#footer .footer-body .right {
+  padding-top: 80px;
 }

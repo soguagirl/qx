@@ -1,0 +1,235 @@
+@lightPrimaryColor: #2789f5;
+
+#menu {
+  > li {
+    position: relative;
+
+    &:hover {
+      .sub-menu {
+        li {
+          opacity: 1;
+        }
+      }
+    }
+
+    .sub-menu {
+      position: absolute;
+      top: 30px;
+      left: -60px;
+
+      li {
+        opacity: 0;
+        width: 244px;
+        margin: 0px;
+        padding: 14px 0px;
+        text-align: center;
+        background-color: #fff;
+        transition: opacity 1s;
+
+        &:nth-of-type(0) {
+          transition-duration: 0ms;
+        }
+
+        &:nth-of-type(1) {
+          transition-duration: 600ms;
+        }
+
+        &:nth-of-type(0) {
+          transition-duration: 1200ms;
+        }
+
+        &:nth-of-type(0) {
+          transition-duration: 1800ms;
+        }
+
+        &:hover {
+          background-color: @lightPrimaryColor;
+
+          a {
+            color: white;
+          }
+        }
+
+        a {
+          padding: 0px;
+          color: @lightPrimaryColor;
+        }
+      }
+    }
+    
+    &:not(:nth-of-type(2)):hover {
+      a {
+        &:after {
+          content:'';
+          margin:0 1.1em 0 1.1em;
+          height:2px;
+          background:#fff;
+          display:block;
+          position:absolute;
+          bottom:-6px;
+          left:0;
+          right:0;
+          display:block
+        }
+      }
+    }
+  }
+}
+
+.solution {
+  &.solution1 {
+    .header {
+      background-image: url(../assets/images/solution-bg1.jpg);
+    }
+  }
+
+  &.solution2 {
+    .header {
+      background-image: url(../assets/images/solution-bg2.jpg);
+    }
+  }
+
+  &.solution3 {
+    .header {
+      background-image: url(../assets/images/solution-bg3.jpg);
+    }
+  }
+
+  &.solution4 {
+    .header {
+      background-image: url(../assets/images/solution-bg4.jpg);
+    }
+  }
+
+  &.cooperation {
+    .header {
+      background-image: url(../assets/images/cooperation-bg.jpg);
+    }
+  }
+
+  &.about {
+    .header {
+      background-image: url(../assets/images/about-bg.jpg);
+    }
+  }
+
+  .header {
+    height: 300px;
+    position: relative;
+    // background-size: cover;
+    background-position: center center;
+
+    .title {
+      font-size: 48px;
+      line-height: 22px;
+      color: #ffffff;
+    }
+  }
+
+  .footer {
+    height: 94px;
+    font-size: 14px;
+	  line-height: 30px;
+    color: white;
+    background-color: #191b27;
+
+    .icon {
+      width: 15px;
+      height: 15px;
+      margin-right: 8px;
+    }
+
+    .info {
+      text-align: center;
+      div {
+        display: inline-block;
+        margin-top: 22px;
+        margin-right: 80px;
+        &:last-of-type {
+          margin-right: 0px;
+        }
+      }
+    }
+
+    .copyright {
+      text-align: center;
+    }
+  }
+
+  .section {
+    padding: 62px 0px;
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .framework {
+    background-color: #fafafa;
+  }
+
+  .channel {
+    text-align: center;
+    background-color: #fafafa;
+
+    // .title {
+    //   position: relative;
+    //   font-size: 32px;
+
+    //   &:after {
+    //     content:'';
+    //     // margin:0 1.1em 0 1.1em;
+    //     width: 60px;
+    //     height:4px;
+    //     background:@lightPrimaryColor;
+    //     display:block;
+    //     position:absolute;
+    //     bottom:-6px;
+    //     left:50%;
+    //     transform: translateX(-50%);
+    //   }
+    // }
+
+    .desc {
+      font-size: 18px;
+    }
+
+    .company-info {
+      display: inline-block;
+      margin-top: 100px;
+      width: 700px;
+      display: inline-flex;
+      justify-content: space-around;
+
+      .right {
+        text-align: left;
+
+        .name {
+          font-size: 22px;
+	        color: #010101;
+        }
+
+        .mobile, .email, .address {
+          font-size: 18px;
+          margin-top: 4px;
+        }
+
+        .mobile {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+
+  .join {
+    text-align: center;
+
+    .welcome {
+      margin-top: 60px;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 1px;
+      color: #333333;
+    }
+  }
+}

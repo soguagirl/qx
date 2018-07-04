@@ -1,0 +1,48 @@
+.solution .header {
+  position: relative;
+  height: 300px;
+  background-image: url(../assets/images/solution-bg1.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+.solution .header .title {
+  font-size: 48px;
+  line-height: 22px;
+  color: #ffffff;
+}
+.solution .footer {
+  height: 94px;
+  font-size: 14px;
+  line-height: 30px;
+  color: white;
+  background-color: #191b27;
+}
+.solution .footer .icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+}
+.solution .footer .info {
+  text-align: center;
+}
+.solution .footer .info div {
+  display: inline-block;
+  margin-top: 22px;
+  margin-right: 80px;
+}
+.solution .footer .info div:last-of-type {
+  margin-right: 0px;
+}
+.solution .footer .copyright {
+  text-align: center;
+}
+.solution .section {
+  padding: 62px 0px;
+}
+.solution .section img {
+  display: block;
+  margin: 0 auto;
+}
+.solution .framework {
+  background-color: #fafafa;
+}
