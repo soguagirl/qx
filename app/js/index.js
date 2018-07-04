@@ -5,12 +5,29 @@ var myFullpage = new fullpage('#app', {
   continuousVertical: false,
   navigation: true,
   navigationPosition: 'right',
-  afterLoad: function(anchorLink, index){
-    console.log('afterload: %o', anchorLink);
-    console.log("AFTER LOAD - anchorLink:" +anchorLink + " index:" +index );
+  afterLoad: function(origin, destination, direction){
+    var params = {
+        origin: origin,
+        destination: destination,
+        direction: direction
+    };
+
+    var app = document.getElementById('app');
+    var logo = document.getElementById('logoImg');
+
+    if (destination.index >= 2) {
+      logo.src = '../assets/images/logo2.png';
+      app.className = 'light';
+    } else {
+      logo.src = '../assets/images/logo1.png';
+      app.className = 'dark';
+    }
+
+    console.log("--- afterLoad ---");
+    console.log(params);
+    console.log('===============');
   },
   onLeave: function(index, nextIndex, direction){
     console.log('onLeave: %o', index);
-    console.log("ONLEAVE - index:" +index + " nextIndex:" +nextIndex  + " direction:" + direction);
   },
 });

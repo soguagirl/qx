@@ -27,14 +27,6 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
 }
-#menu-line {
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 159px;
-  height: 2px;
-  background: #fff;
-}
 #menu {
   position: fixed;
   top: 20px;
@@ -51,17 +43,27 @@ a {
   position: relative;
 }
 #menu a {
-  color: #fff;
   padding: 0 1.1em 1.1em 1.1em;
 }
 #menu li.active a:after {
   content: '';
   margin: 0 1.1em 0 1.1em;
   height: 2px;
-  background: #fff;
   position: absolute;
   bottom: -6px;
   left: 0;
   right: 0;
   display: block;
+}
+#app.light #menu a {
+  color: #000;
+}
+#app.light #menu li.active a:after {
+  background: #000;
+}
+#app.dark #menu a {
+  color: #fff;
+}
+#app.dark #menu li.active a:after {
+  background: #fff;
 }

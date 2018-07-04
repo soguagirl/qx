@@ -1,5 +1,15 @@
-#fullpage {
+#app {
   min-width: 1280px;;
+}
+
+// animation: name duration timing-function delay iteration-count direction play-state fill-mode
+// transition: property duration timing-function delay;
+
+@keyframes translateYAnim {
+  to { 
+    transform: translateY(0px); 
+    opacity: 1;
+  }
 }
 
 .section {
@@ -12,8 +22,21 @@
   color: red;
   background-image: url(../assets/images/bg1.jpg);
 
+  .title {
+    transform: translateY(150px); 
+    opacity: 0.5;
+    // animation: name duration timing-function delay iteration-count direction play-state fill-mode
+    // transition: property duration timing-function delay;
+    animation: translateYAnim 1s;
+    animation-fill-mode: forwards
+  }
+
   .sub-title {
-    margin-top: 60px;
+    margin-top: 60px;    
+    transform: translateY(80px); 
+    opacity: 0.5;
+    animation: translateYAnim 1s 0.5s;
+    animation-fill-mode: forwards
   }
 }
 
@@ -24,6 +47,27 @@
     width: 25%;
     height: 100%;
 
+    &:hover {
+      .mask {
+        background-color: blue;
+        // transition: backgroud-color 1s;
+      }
+
+      .solution-content {
+        // transition: transform 1s;
+        transform: translateY(-250px);
+        .order {
+          transition: opacity 100ms;
+          opacity: 0;
+        }
+
+        .desc {
+          opacity: 1;
+          transition: opacity 1s 200ms;    
+        }
+      }
+    }
+
     .mask {
       position: absolute;
       left: 0px;
@@ -32,10 +76,7 @@
       height: 100%;
       background-color: black;
       opacity: 0.65;
-
-      &:hover {
-        background-color: blue;
-      }
+      transition: backgroud-color 1s;
     }
 
     .solution-content {
@@ -44,15 +85,29 @@
       top: 40%;
       transform: translateY(-50%);
       color: white;
+      transition: transform 1s;
+      
 
       .order {
         display: inline-block;
         font-size: 30px;
         border-bottom: 2px solid white;
+        transition-duration: 1s;  
+        transition-delay: 400ms;      
       }
 
       .name {
         font-size: 40px;
+      }
+
+      .desc {
+        position: absolute;
+        left: 0px;
+        top: 260px;
+        line-height: 1.6;
+        opacity: 0;
+        transition-duration: 400ms;
+        transition-delay: 0s;
       }
     }
 

@@ -1,5 +1,19 @@
-#fullpage {
+#app {
   min-width: 1280px;
+}
+@-webkit-keyframes translateYAnim {
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes translateYAnim {
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
 }
 .section {
   background-size: cover;
@@ -10,14 +24,45 @@
   color: red;
   background-image: url(../assets/images/bg1.jpg);
 }
+#home .title {
+  -webkit-transform: translateY(150px);
+          transform: translateY(150px);
+  opacity: 0.5;
+  -webkit-animation: translateYAnim 1s;
+          animation: translateYAnim 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
 #home .sub-title {
   margin-top: 60px;
+  -webkit-transform: translateY(80px);
+          transform: translateY(80px);
+  opacity: 0.5;
+  -webkit-animation: translateYAnim 1s 0.5s;
+          animation: translateYAnim 1s 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 #solution .solution-item {
   position: relative;
   display: inline-block;
   width: 25%;
   height: 100%;
+}
+#solution .solution-item:hover .mask {
+  background-color: blue;
+}
+#solution .solution-item:hover .solution-content {
+  -webkit-transform: translateY(-250px);
+          transform: translateY(-250px);
+}
+#solution .solution-item:hover .solution-content .order {
+  transition: opacity 100ms;
+  opacity: 0;
+}
+#solution .solution-item:hover .solution-content .desc {
+  opacity: 1;
+  transition: opacity 1s 200ms;
 }
 #solution .solution-item .mask {
   position: absolute;
@@ -27,9 +72,7 @@
   height: 100%;
   background-color: black;
   opacity: 0.65;
-}
-#solution .solution-item .mask:hover {
-  background-color: blue;
+  transition: backgroud-color 1s;
 }
 #solution .solution-item .solution-content {
   position: absolute;
@@ -38,14 +81,27 @@
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   color: white;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
 }
 #solution .solution-item .solution-content .order {
   display: inline-block;
   font-size: 30px;
   border-bottom: 2px solid white;
+  transition-duration: 1s;
+  transition-delay: 400ms;
 }
 #solution .solution-item .solution-content .name {
   font-size: 40px;
+}
+#solution .solution-item .solution-content .desc {
+  position: absolute;
+  left: 0px;
+  top: 260px;
+  line-height: 1.6;
+  opacity: 0;
+  transition-duration: 400ms;
+  transition-delay: 0s;
 }
 #solution .solution-item.solution1 {
   background: url('../assets/images/section2/1.jpg') 25% 0% no-repeat;
