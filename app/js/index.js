@@ -4,6 +4,7 @@ var logo = null;
 var section3Title = null;
 var section3SubTitle = null;
 var section3Partners = null;
+var nav = null;
 
 window.onload = function () {
   app = document.getElementById('app');
@@ -12,6 +13,7 @@ window.onload = function () {
   section3Title = cooperation.getElementsByClassName('title')[0];
   section3SubTitle = cooperation.getElementsByClassName('sub-title')[0];
   section3Partners = cooperation.getElementsByClassName('partners')[0];
+  nav = document.getElementById('fp-nav');
 }
 
 var myFullpage = new fullpage('#fullpage', {
@@ -22,35 +24,35 @@ var myFullpage = new fullpage('#fullpage', {
   navigation: true,
   navigationPosition: 'right',
   afterLoad: function(origin, destination, direction){
+    // if (destination.index === 2) {
+    //   if (section3Title) {
+    //     section3Title.style.webkitAnimationPlayState = "running";
+    //     section3SubTitle.style.webkitAnimationPlayState = "running";
+    //     section3Partners.style.webkitAnimationPlayState = "running";
+    //   }
+    // }
+
+    // console.log("--- afterLoad ---");
+    // console.log(params);
+    // console.log('===============');
+  },
+  onLeave: function(index, nextIndex, direction){
     var params = {
-        origin: origin,
-        destination: destination,
+        origin: index,
+        destination: nextIndex,
         direction: direction
     };
 
     if (app && logo) {
-      if (destination.index >= 2) {
+      if (nextIndex.index >= 2) {
         logo.src = '../assets/images/logo2.png';
         app.className = 'light';
+        nav.classList.add('dark');
       } else {
         logo.src = '../assets/images/logo1.png';
         app.className = 'dark';
+        nav.classList.remove('dark');
       }
     }
-
-    if (destination.index === 2) {
-      if (section3Title) {
-        section3Title.style.webkitAnimationPlayState = "running";
-        section3SubTitle.style.webkitAnimationPlayState = "running";
-        section3Partners.style.webkitAnimationPlayState = "running";
-      }
-    }
-
-    console.log("--- afterLoad ---");
-    console.log(params);
-    console.log('===============');
-  },
-  onLeave: function(index, nextIndex, direction){
-    console.log('onLeave: %o', index);
   },
 });
