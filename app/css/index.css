@@ -133,7 +133,6 @@
   position: absolute;
   left: 0px;
   top: 40%;
-  transform: translateY(-50%);
   color: white;
   transition: transform 1s;
 }
@@ -149,9 +148,7 @@
   font-size: 40px;
 }
 #solution .solution-item .solution-content .desc {
-  position: absolute;
-  left: 0px;
-  top: 160px;
+  margin-top: 40px;
   line-height: 1.6;
   opacity: 0;
   transition-duration: 400ms;
@@ -170,6 +167,8 @@
   border: solid 1px #fff;
 }
 #cooperation {
+  background-image: url(../assets/images/index-cooperation-bg.jpg);
+  background-size: cover;
   text-align: center;
 }
 #cooperation .title,
@@ -180,17 +179,17 @@
 #cooperation .title {
   transform: translateY(150px);
   opacity: 0.3;
-  animation: translateYAnim 1s;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
-  animation-play-state: paused;
 }
 #cooperation .sub-title {
   margin-top: 50px;
   transform: translateY(100px);
   opacity: 0.3;
-  animation: translateYAnim 1s;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
-  animation-play-state: paused;
 }
 #cooperation .partners {
   padding: 0px 50px;
@@ -200,9 +199,9 @@
       justify-content: space-around;
   margin-top: 158px;
   opacity: 0;
-  animation: fadeIn 1.5s;
+  animation-duration: 1.5s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
-  animation-play-state: paused;
 }
 #cooperation .btn-more {
   display: inline-block;
@@ -214,18 +213,46 @@
   font-stretch: normal;
   line-height: 80px;
   letter-spacing: 5px;
-  background-color: white;
   color: #2789f5;
   border: solid 1px #2789f5;
+  transition: 0.3s;
 }
 #cooperation .btn-more:hover {
   background-color: #2789f5;
   color: white;
   border: solid 1px #2789f5;
 }
+#cooperation.active .title,
+#cooperation.fp-completely .title,
+#cooperation.active .sub-title,
+#cooperation.fp-completely .sub-title {
+  animation-name: translateYAnim;
+}
+#cooperation.active .partners,
+#cooperation.fp-completely .partners {
+  animation-name: fadeIn;
+}
 #about {
   position: relative;
   text-align: center;
+}
+#about .about-inner {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+#about .about-inner .about-extra {
+  -ms-flex: 1;
+      flex: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding-top: 5%;
 }
 #about .company {
   padding: 0 50px;
@@ -233,7 +260,6 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-top: 125px;
 }
 #about .company .company-item {
   position: relative;
@@ -266,10 +292,33 @@
   background-color: rgba(0, 0, 0, 0.6);
   transition: color 1s, background-color 1s;
 }
+#about .footer-body {
+  text-align: left;
+  padding: 20px 114px;
+  font-size: 18px;
+  line-height: 36px;
+  color: #fff;
+  background-color: #2789f5;
+  position: relative;
+}
+#about .footer-body .flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+}
+#about .footer-body .flex:first-of-type::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 6px;
+  background-color: #fff;
+  overflow: hidden;
+}
 #about .contact-us {
-  position: absolute;
-  left: 114px;
-  bottom: 30px;
+  padding: 30px 114px;
 }
 #about .contact-us::after {
   content: '';
@@ -288,22 +337,4 @@
 }
 #about .contact-us p ~ p {
   font-size: 28px;
-}
-#footer .footer-body {
-  padding: 20px 205px;
-  height: 140px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  font-size: 18px;
-  line-height: 36px;
-  color: #fff;
-  background-color: #2789f5;
-}
-#footer .footer-body .left {
-  padding-top: 15px;
-}
-#footer .footer-body .right {
-  padding-top: 80px;
 }

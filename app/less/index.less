@@ -171,7 +171,7 @@
       position: absolute;
       left: 0px;
       top: 40%;
-      transform: translateY(-50%);
+      // transform: translateY(-50%);
       color: white;
       transition: transform 1s;
 
@@ -189,9 +189,7 @@
       }
 
       .desc {
-        position: absolute;
-        left: 0px;
-        top: 160px;
+        margin-top: 40px;
         line-height: 1.6;
         opacity: 0;
         transition-duration: 400ms;
@@ -218,6 +216,8 @@
 }
 
 #cooperation {
+  background-image: url(../assets/images/index-cooperation-bg.jpg);
+  background-size: cover;
   text-align: center;
 
   .title, .sub-title {
@@ -228,18 +228,20 @@
   .title {
     transform: translateY(150px); 
     opacity: 0.3;
-    animation: translateYAnim 1s;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    // animation: translateYAnim 1s;
     animation-fill-mode: forwards;
-    animation-play-state: paused;
   }
 
   .sub-title {
     margin-top: 50px;
     transform: translateY(100px); 
     opacity: 0.3;
-    animation: translateYAnim 1s;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    // animation: translateYAnim 1s;
     animation-fill-mode: forwards;
-    animation-play-state: paused;
   }
 
   .partners {
@@ -248,9 +250,10 @@
     justify-content: space-around;
     margin-top: 158px;
     opacity: 0;
-    animation: fadeIn 1.5s;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    // animation: fadeIn 1.5s;
     animation-fill-mode: forwards;
-    animation-play-state: paused;
   }
 
   .btn-more {
@@ -263,13 +266,21 @@
     font-stretch: normal;
     line-height: 80px;
     letter-spacing: 5px;
-    background-color: white;
     color: @lightPrimaryColor;
     border: solid 1px @lightPrimaryColor;
+    transition: .3s;
     &:hover {
       background-color: @lightPrimaryColor;
       color: white;
       border: solid 1px @lightPrimaryColor;
+    }
+  }
+  &.active, &.fp-completely {
+    .title, .sub-title {
+      animation-name: translateYAnim;
+    }
+    .partners {
+      animation-name: fadeIn;
     }
   }
 }
@@ -277,12 +288,23 @@
 #about {
   position: relative;
   text-align: center;
+  .about-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .about-extra {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 5%;
+    }
+  }
 
   .company {
     padding: 0 50px;
     display: flex;
     justify-content: space-around;
-    margin-top: 125px;
 
     .company-item {
       position: relative;
@@ -322,11 +344,33 @@
       }
     }
   }
-
+  .footer-body {
+    text-align: left;
+    padding: 20px 114px;
+    font-size: 18px;
+    line-height: 36px;
+    color: #fff;
+    background-color: @lightPrimaryColor;
+    position: relative;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:first-of-type::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 6px;
+        background-color: #fff;
+        overflow: hidden;
+      }
+    }
+  }
   .contact-us {
-    position: absolute;
-    left: 114px;
-    bottom: 30px;
+    padding: 30px 114px;
     &::after {
       content: '';
       display: block;
@@ -349,22 +393,5 @@
 }
 
 #footer {
-  .footer-body {
-    padding: 20px 205px;
-    height: 140px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
-    line-height: 36px;
-    color: #fff;
-    background-color: @lightPrimaryColor;
-
-    .left {
-      padding-top: 15px;
-    }
-
-    .right {
-      padding-top: 80px;
-    }
-  }
+  
 }

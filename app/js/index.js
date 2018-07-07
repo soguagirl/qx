@@ -18,11 +18,12 @@ window.onload = function () {
 
 var myFullpage = new fullpage('#fullpage', {
   // sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke'],
-  anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+  anchors: ['page1', 'page2', 'page3', 'page4'],
   menu: '#menu',
   continuousVertical: false,
   navigation: true,
   navigationPosition: 'right',
+  touchSensitivity: 50,
   afterLoad: function(origin, destination, direction){
     // if (destination.index === 2) {
     //   if (section3Title) {
